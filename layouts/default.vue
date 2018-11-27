@@ -55,8 +55,9 @@
     >
       <v-btn v-for="(tab, index) in tabs" :key="index"
         color="teal"
-        flat
         value="recent"
+        :to="tab.to"
+        router
       >
         <span v-text="tab.title"></span>
         <v-icon>history</v-icon>
