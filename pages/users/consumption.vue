@@ -2,7 +2,7 @@
   <v-layout>
     <v-flex>
       <template>
-        <div>{{increment}} limones</div>
+        <div>Consumo de agua</div>
         <button @click="$store.commit('increment')">Aumentar limones</button>
       </template>
     </v-flex>
