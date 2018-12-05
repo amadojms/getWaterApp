@@ -1,14 +1,17 @@
 'use strict';
 const express = require('express');
-//const cors = require('cors');
+const express_graphql = require('express-graphql');
 const mongoose = require('mongoose');
-const path = require('path');
 const config = require('./config/db');
-//var api = require('./routes/routes');
+const schema = require('./schema/schema');
 
 const app = express();
 
-// Conexion a la base de datos
+app.use('/graphql', express_graphql({
+    schema
+}));
+
+// Conexion a la base de datos MongoDB
 mongoose.connect(config.database, { useNewUrlParser: true }).then(
     () => {
         console.log('Conectado a la base de datos ' + config.database)
@@ -25,15 +28,10 @@ var port = process.env.PORT || 8080;
 // Usar este puerto para desarrollo
 // const port = 3000;
 
-// CORS Middleware permite la conexion entre archivos
-//app.use(cors());
 
 // Establecer carpeta
 app.use(express.static(path.join(__dirname, 'public')))
 
-// Body Parser Middleware permite la renderización de las vistas
-// app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(bodyParser.json());
 
 //Headers necesarios para que el servidor node de accso a las peticiones no importando que cabeceras
 /*app.use(function(req, res, next) {
