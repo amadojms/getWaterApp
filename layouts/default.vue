@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-navigation-drawer :clipped="clipped" v-model="drawer" fixed app>
       <v-list>
         <v-list-tile v-for="(item, i) in items" :to="item.to" :key="i" router exact>

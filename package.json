@@ -1,7 +1,7 @@
 {
-  "name": "primer_app_nuxt",
+  "name": "PideTuAgua",
   "version": "1.0.0",
-  "description": "My epic Nuxt.js project",
+  "description": "Solicita tu agua",
   "author": "Amado",
   "private": true,
   "scripts": {
