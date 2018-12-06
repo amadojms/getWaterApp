@@ -1,5 +1,7 @@
 'use strict';
 const graphql = require('graphql');
+const Usuario = require('../models/usuario');
+const Pedido = require('../models/pedido');
 
 const {
 GrahpQLObjectType,
@@ -29,6 +31,29 @@ const RootQuery = new GrahpQLObjectType({
     }
 });
 
+const Mutation = new GrahpQLObjectType({
+name: 'Mutation',
+field: {
+    addUsuario:{
+        type: usuarioType,
+        args:{
+            nombre:{type:GrahpQLString},
+            apellido: {type: GrahpQLString},
+            tipoUsuario:{type: GrahpQLString}
+        },
+        resolve(parent,args){
+            let usuario = new Usuario({
+                nombre: args.nombre,
+                apellido: args.apellido,
+                tipoUsuario: args.tipoUsuario
+            });
+            return usuario.save();
+        }
+    }
+}
+})
+
 module.exports = new GraphQLSchema({
-    query: RootQuery
+    query: RootQuery,
+    mutation: Mutation
 })
