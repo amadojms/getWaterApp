@@ -54,7 +54,7 @@ export default {
       drawer: true,
       items: [
         { icon: "home", title: "Home", to: "/" },
-        { icon: "fingerprint", title: "Ajustes", to: "/users/profile" }
+        { icon: "account_circle", title: "Perfil", to: "/users/profile" }
       ],
       title: "Pide tu agua",
       bottomNav: "recent"

@@ -1,0 +1,3 @@
+//-------------------- link info google maps ------------------------
+https://alligator.io/vuejs/vue-google-maps/
+https://codesandbox.io/s/x3332w98po

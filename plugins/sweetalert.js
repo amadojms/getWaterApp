@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import swal from 'sweetalert'
+import VueSweetalert2 from 'vue-sweetalert2';
 
-Vue.use(swal)
+Vue.use(VueSweetalert2);
