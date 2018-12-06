@@ -41,7 +41,7 @@
       </v-layout>
        <v-layout flex align-center justify-center>
         <v-flex>
-              <v-btn block color="green" class="white--text">
+              <v-btn block color="green" class="white--text" @click="pay">
                 Pagar ${{priceTotal}} pesos
               </v-btn>
         </v-flex>
@@ -50,6 +50,7 @@
   </main>
 </template>
 <script>
+// import swal from 'sweetalert';
 export default {
   data() {
     return {
@@ -63,6 +64,11 @@ export default {
     },
     priceTotal() {
       return this.qty * this.price
+    }
+  },
+  methods:{
+    pay(){
+      this.$swal("hey");
     }
   }
 };
