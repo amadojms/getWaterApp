@@ -3,9 +3,9 @@
     <v-container>
       <v-layout flex align-center justify-center >
         <v-flex class="pad-b-10">
-          <v-card color="white" class="blue--text">
+          <v-card class="grey--text">
             <v-card-text class="text-xs-center">
-              <div class="headline padding">Solicitar agua</div>
+              <div class="headline pad-b-10">Solicitar agua</div>
               <v-layout column align-center>
                 <v-flex>
                   <v-img class="size-img" src="../../img/bottle-of-water.png"></v-img>
@@ -17,7 +17,7 @@
               <v-btn color="error" @click="qty--">
                 <v-icon>remove</v-icon>
               </v-btn>
-              <v-btn color="success" @click="qty++">
+              <v-btn color="green" class="white--text" @click="qty++">
                 <v-icon>add</v-icon>
               </v-btn>
             </v-card-text>
@@ -25,17 +25,25 @@
         </v-flex>
       </v-layout>
       <v-layout flex align-center justify-center>
-        <v-flex>
-          <v-card color="white" class="blue--text">
+        <v-flex class="pad-b-10">
+          <v-card color="white" class="grey--text">
             <v-card-text class="text-xs-center">
               <div class="headline">Resumen de compra</div>
               <v-layout column align-center>
                 <v-flex>
-                  <div class>{{qty}} {{qty > 1 ? 'Aguas' : 'Agua'}}</div>
+                  <div class="display-2">{{qty}} {{qty > 1 ? 'Aguas' : 'Agua'}}</div>
+                  <div class="display-2">{{priceTotal}} Pesos</div>
                 </v-flex>
               </v-layout>
             </v-card-text>
           </v-card>
+        </v-flex>
+      </v-layout>
+       <v-layout flex align-center justify-center>
+        <v-flex>
+              <v-btn block color="green" class="white--text">
+                Pagar ${{priceTotal}} pesos
+              </v-btn>
         </v-flex>
       </v-layout>
     </v-container>
@@ -45,12 +53,16 @@
 export default {
   data() {
     return {
-      qty: 0
+      qty: 1,
+      price: 15
     };
   },
   computed: {
     increment() {
       return this.$store.state.counter;
+    },
+    priceTotal() {
+      return this.qty * this.price
     }
   }
 };
