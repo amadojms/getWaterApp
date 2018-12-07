@@ -36,6 +36,8 @@ module.exports = {
   */
   plugins: [
     '@/plugins/vuetify',
+    '@/plugins/vuemaps',
+    // 'vue-sweetalert2/nuxt'
     // '@/plugins/sweetalert.js'
   ],
 
@@ -45,7 +47,6 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
-    'vue-sweetalert2/nuxt'
   ],
   /*
   ** Axios module configuration

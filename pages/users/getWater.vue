@@ -68,8 +68,9 @@ export default {
   },
   methods:{
     pay(){
-      Vue.swal('Hello Vue world!!!');
-    //  this.$swal('Pago de'+this.priceTotal+' realizado correctamente', "bien hecho", "success");
+      // Vue.swal('Hello Vue world!!!');
+      var vm = this;
+      this.$swal('Pago de'+vm.priceTotal+' realizado correctamente', "bien hecho", "success");
     }
   }
 };
